@@ -1,0 +1,17 @@
+# IDE Files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.idea/
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+cmake-build-*/
+Makefile
+
+# Build directories
+build/
