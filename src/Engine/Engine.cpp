@@ -27,7 +27,7 @@ int Engine::Initialize()
 	}
 
 	// Initialize GLFW Window
-	if (CreateWindow(1280, 720, "2DTileGame by Gabriel Coates") == -1)
+	if (CreateWindow(1280, 720, "OpenGLTemplate") == -1)
 	{
 		return -1;
 	}
