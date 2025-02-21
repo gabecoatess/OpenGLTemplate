@@ -18,8 +18,6 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(glfw)
 
-# Instead of fetching GLAD, assume you generated your own GLAD files.
-# For example, if you placed them in external/glad:
 set(GLAD_DIR ${CMAKE_SOURCE_DIR}/external/glad)
 add_library(glad_lib ${GLAD_DIR}/src/glad.c)
 target_include_directories(glad_lib PUBLIC ${GLAD_DIR}/include)
@@ -33,7 +31,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(imgui)
 
 # Create a static library target for ImGui.
-if(NOT TARGET imgui_lib)
+if (NOT TARGET imgui_lib)
     add_library(imgui_lib STATIC
             ${imgui_SOURCE_DIR}/imgui.cpp
             ${imgui_SOURCE_DIR}/imgui_draw.cpp
@@ -49,7 +47,7 @@ if(NOT TARGET imgui_lib)
             ${imgui_SOURCE_DIR}/backends
             ${glfw_SOURCE_DIR}/include
     )
-endif()
+endif ()
 
 # Automatically collect all .cpp files in the "src" folder (including nested modules).
 file(GLOB_RECURSE SRC_FILES ${CMAKE_SOURCE_DIR}/src/*.cpp)
